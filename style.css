@@ -1,0 +1,52 @@
+body {
+    padding: 10px;
+}
+
+.container {
+    height: auto;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sub-container {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+
+.container label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.container input[type='text'], .container input[type='number'], .container select {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 0;
+}
+
+.container-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.container-button button {
+    padding: 5px 10px;
+    background-color: darkcyan;
+    color: white;
+    border-radius: 5px;
+    border: 0;
+}

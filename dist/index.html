@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC con Tesorflow JS</title>
+    <link rel="stylesheet" href="/style.e308ff8e.css">
+<script src="/style.e308ff8e.js"></script></head>
+<body>
+    <div class="container">
+        <div class="sub-container">
+            <label for="weight">Peso (mts):</label>
+            <input type="text" id="weight" placeholder="Ej. 90">
+
+            <label for="height">Altura (cms):</label>
+            <input type="text" id="height" placeholder="Ej. 1.80">
+
+            <label for="units">Unidades capa oculta:</label>
+            <input type="number" id="units" min="1" max="30" placeholder="Ej. 20" value="20">
+
+            <label for="activation">Función de Activación:</label>
+            <select id="activation" placeholder="Función de Activación">
+                <option value="relu">ReLU (Rectified Linear Unit)</option>
+                <option value="sigmoid">Sigmoid (Sigmoid Function)</option>
+                <option value="tanh">Tanh (Hyperbolic Tangent)</option>
+                <option value="softmax">Softmax (Softmax Function)</option>
+                <option value="elu">ELU (Exponential Linear Unit)</option>
+                <option value="softplus">Softplus (Softplus Function)</option>
+                <option value="selu">SELU (Scaled Exponential Linear Unit)</option>
+            </select>
+            
+
+            <label for="optimizer">Optimizador:</label>
+            <select id="optimizer" placeholder="Optimizador">
+                <option value="sgd">(SGD) Stochastic Gradient Descent</option>
+                <option value="adam">(Adam) Adaptive Moment Estimation</option>
+                <option value="rmsprop">(RMSprop) Root Mean Square Propagation</option>
+                <option value="adagrad">(Adagrad) Adaptive Gradient Algorithm</option>
+                <option value="adadelta">(Adadelta) Adaptive Delta</option>
+            </select>
+
+            <label for="epochs">Epocas:</label>
+            <input type="number" id="epochs" min="1" max="5000" placeholder="Ej. 500" value="500">
+
+            <div class="container-button">
+                <button type="button" id="send">Enviar</button>
+            </div>
+
+            <label for="result">IMC:</label>
+            <input type="text" readonly="" id="result">
+        </div>
+    </div>
+    
+    <script src="/tensorflowJS.e31bb0bc.js"></script>
+</body>
+</html>
