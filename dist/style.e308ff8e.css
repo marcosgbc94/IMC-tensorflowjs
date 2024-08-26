@@ -9,8 +9,9 @@ body {
     background-color: aqua;
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    align-items: start;
+    flex-direction: row;
+    gap: 20px;
 }
 
 .sub-container {
@@ -18,6 +19,14 @@ body {
     justify-content: center;
     align-items: start;
     flex-direction: column;
+}
+
+.sub-container:first-child {
+    width: 300px;
+}
+
+.sub-container:last-child {
+    width: calc(100% - 300px);
 }
 
 .container label {
@@ -49,6 +58,14 @@ body {
     color: white;
     border-radius: 5px;
     border: 0;
+}
+
+table {
+    width: 100%;
+}
+
+table th, table td {
+    text-align: center;
 }
 
 /*# sourceMappingURL=/style.e308ff8e.css.map */

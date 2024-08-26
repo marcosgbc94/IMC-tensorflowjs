@@ -46,8 +46,31 @@
                 <button type="button" id="send">Enviar</button>
             </div>
 
-            <label for="result">IMC:</label>
+            <label for="result">IMC (generado TensorFlow):</label>
             <input type="text" readonly="" id="result">
+            <label for="result">IMC (correcto):</label>
+            <input type="text" readonly="" id="result-correct">
+        </div>
+
+        <div class="sub-container">
+            <table id="history">
+                <caption>Historial</caption>
+                <thead>
+                    <th scope="col">N°</th>
+                    <th scope="col">Peso</th>
+                    <th scope="col">Altura</th>
+                    <th scope="col">Unidades</th>
+                    <th scope="col">Activación</th>
+                    <th scope="col">Optimizador</th>
+                    <th scope="col">Epocas</th>
+                    <th scope="col">IMC Generado</th>
+                    <th scope="col">IMC Correcto</th>
+                    <th scope="col">% Igualdad</th>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
         </div>
     </div>
     

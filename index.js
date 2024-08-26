@@ -10,11 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const optimizer = document.querySelector('#optimizer');
     const epochs = document.querySelector('#epochs');
     const result = document.querySelector('#result');
+    const resultCorrect = document.querySelector('#result-correct');
+    const history = document.querySelector('#history');
 
     send.addEventListener('click', async () => {
         try {
             send.innerHTML = "Cargando...";
             send.disabled = true;
+            const IMCCorrect = (parseInt(weight.value) / (parseFloat(height.value) * parseFloat(height.value))).toFixed(2);
+            resultCorrect.value = IMCCorrect;
 
             const testData = [[parseInt(weight.value), parseFloat(height.value)]];
 
@@ -31,10 +35,28 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             const prediction  = await model(inputData, outputData, testData, options);
-            result.value = prediction.toFixed(2);
+            const predictionValue = prediction.toFixed(2);
+            result.value = predictionValue;
             if (prediction) {
                 send.innerHTML = "Enviar";
                 send.disabled = false;
+                const countLinesHistory = history.querySelectorAll('tbody > tr').length + 1;
+                const relativeError = Math.abs((IMCCorrect - predictionValue) / IMCCorrect) * 100;
+                const porcentEqual = (100 - relativeError).toFixed(2);
+                history.querySelector('tbody').innerHTML += `
+                <tr>
+                    <th scope='row'>${countLinesHistory}</th>
+                    <td>${weight.value}</td>
+                    <td>${height.value}</td>
+                    <td>${options.units}</td>
+                    <td>${options.activation}</td>
+                    <td>${options.optimizer}</td>
+                    <td>${options.epochs}</td>
+                    <td>${predictionValue}</td>
+                    <td>${IMCCorrect}</td>
+                    <td>${porcentEqual}%</td>
+                </tr>
+                `;
             }
         } catch (error) {
             console.error('Error durante predicción: ', error);

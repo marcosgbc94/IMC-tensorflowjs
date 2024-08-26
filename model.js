@@ -21,11 +21,6 @@ export async function model(inputData, outputData, testData, options = {}) {
         const prediction = model.predict(testDataTensor);
         const predictionArray = await prediction.array();
 
-        console.log('======================================================');
-        console.log("Peso: " + testData[0][0], "Altura: " + testData[0][1]);
-        console.log("Opciones: ", options);
-        console.log("Predicciones: ", predictionArray[0][0]);
-
         return predictionArray[0][0];
     } catch (error) {
         console.error('Error durante predicción: ', error);
